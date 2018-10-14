@@ -1,8 +1,8 @@
-@import 'styles/colors';
-@import 'styles/margin-padding';
-@import 'styles/flexbox';
-@import 'styles/ratio';
-@import 'styles/transitions';
+@import "styles/colors";
+@import "styles/margin-padding";
+@import "styles/flexbox";
+@import "styles/ratio";
+@import "styles/transitions";
 
 * {
   box-sizing: border-box;
@@ -14,31 +14,52 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1;
+  background: $black;
 }
 
 body {
-  background: $white;
-  color: $gray-dark;
+  color: $gray-medium;
+  font-family: "Rubik", sans-serif;
   font-size: 16px;
   font-fammily: sans-serif;
-  font-weight: 300;
+  font-weight: 400;
+  line-height: 1;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans Condensed', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
 }
 
-h1, h2, h3 {
-  color: $gray-darker;
+h1,
+h2,
+h3 {
+  color: $white;
   margin: 4rem 0 0.5rem 0;
 }
 
-h1, h2, h3, h4, h5, h6, p, li {
+h4,
+h5,
+h6 {
+  color: $gray-light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
   line-height: 1.5;
   transition: font-size $normal $ease;
 }
@@ -47,16 +68,9 @@ h1 {
   font-size: 3rem;
   margin: 0;
   text-transform: uppercase;
-  color: transparentize($primary, 0.075);
-  line-height: 1;
-
-  .logo {
-    float: left;
-    width: 2.5rem;
-    height: 3rem;
-    padding-right: 0.5rem;
-    color: transparentize(lighten(desaturate($primary, 33%), 50%), 0.1);
-  }
+  color: $primary;
+  line-height: 1.25;
+  font-weight: 700;
 }
 
 h2 {
@@ -64,7 +78,7 @@ h2 {
 }
 
 h1 + h2 {
-  color: transparentize($black, 0.2);
+  color: $white;
   margin-top: 1rem;
   margin-bottom: 2rem;
   line-height: 1.2;
@@ -79,8 +93,8 @@ h3 {
 }
 
 h4 {
-  margin: 1.5rem 0 0.5rem 0;
-  font-size: 1.5rem;
+  margin: 1.5rem 0 0.25rem 0;
+  font-size: 1.25rem;
 }
 
 h5 {
@@ -97,19 +111,19 @@ p {
 a {
   color: inherit;
   text-decoration: none;
-  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.25);
   transition: all $fast $ease;
 }
 
 a:hover {
-  color: $black;
-  box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 1);
+  color: $primary;
+  box-shadow: inset 0 -1px 0 0 $primary;
 }
 
 a:focus {
-  color: $secondary;
-  background: transparentize($secondary, 0.9);
-  box-shadow: inset 0 0 0 1px transparentize($secondary, 0.95);
+  color: $primary;
+  background: transparentize($primary, 0.9);
+  box-shadow: inset 0 0 0 1px transparentize($primary, 0.95);
   outline: none;
   border-radius: 2px;
 }
@@ -128,23 +142,24 @@ button:active {
   outline: none;
 }
 
-b, strong {
-  font-weight: 600;
+b,
+strong {
+  font-weight: 500;
 }
 
 ::-webkit-selection {
   color: $white;
-  background: $secondary;
+  background: #9d3e24;
 }
 
 ::-moz-selection {
   color: $white;
-  background: $secondary;
+  background: #9d3e24;
 }
 
 ::selection {
   color: $white;
-  background: $secondary;
+  background: #9d3e24;
 }
 
 figure > img {
@@ -187,14 +202,8 @@ section.text {
 
 .content-wrapper {
   position: relative;
-  background: $white;
-  box-shadow: 0 -1px 2rem 0 rgba(0, 0, 0, 0.1),
-              0 -1px 6px 0 rgba(0, 0, 0, 0.1),
-              inset 0 1px 0 0 rgba(0, 0, 0, 0.2);
-}
-
-.blue {
-  color: $primary;
+  box-shadow: 0 -1px 2rem 0 rgba(0, 0, 0, 0.1), 0 -1px 6px 0 rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 0 rgba(0, 0, 0, 0.2);
 }
 
 .centered {
@@ -212,7 +221,18 @@ svg.centered {
 }
 
 .abstract {
+  color: $gray-light;
+  column-count: 2;
   text-align: justify;
+  line-height: 1.5em;
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .hidden-anchor {
@@ -223,7 +243,7 @@ svg.centered {
   left: -2rem;
   bottom: 0;
   width: 0.5em;
-  padding: 0 1.5rem 0 0.25rem;
+  padding: 0 1.5rem 0 0.5rem;
   opacity: 0.33;
   transform: scale(0);
   transition: all $fast $ease;
@@ -246,29 +266,28 @@ h3:target .hidden-anchor {
   opacity: 1;
 }
 
-h3:target  {
-  color: $black;
-  background: transparentize($secondary, 0.9);
-
+h3:target {
   &:before {
     position: absolute;
-    content: '';
+    content: "";
     top: 0;
     bottom: 0;
     left: -2rem;
     width: 2rem;
-    background: transparentize($secondary, 0.9);
+    background: $primary;
+    border-radius: 0.25rem 0.25rem 0 0.25rem;
   }
 
   &.underlined:after {
     left: -2rem;
-    background: $secondary;
+    background: $primary;
   }
 
   .hidden-anchor {
     padding-right: 0.25rem;
     color: $white;
-    background: $secondary;
+    background: $primary;
+    border-radius: 0.25rem 0.25rem 0 0;
   }
 }
 
@@ -322,12 +341,12 @@ ol.large-spacing li {
   &:after {
     position: absolute;
     display: block;
-    content: '';
+    content: "";
     bottom: -1px;
     left: -1rem;
     right: -1rem;
     height: 2px;
-    background: $gray-lighter;
+    background: $gray-darker;
     transition: left $fast $ease;
   }
 }
@@ -350,7 +369,7 @@ h5.iconized {
 
   > * {
     display: block;
-    float: left
+    float: left;
   }
 
   > .icon {
@@ -386,12 +405,12 @@ ul.iconized {
     overflow: auto;
 
     > * {
-        display: block;
-        float: left
+      display: block;
+      float: left;
     }
 
     > *:last-child {
-        margin-right: 0.5em;
+      margin-right: 0.5em;
     }
 
     .icon {
@@ -410,10 +429,6 @@ ul.iconized {
   vertical-align: center;
 }
 
-.icon-new {
-  color: $ternary;
-}
-
 .inline-list li {
   display: inline;
 }
@@ -422,12 +437,6 @@ ul.iconized {
 // removed by adblockers.
 .remix-links {
   font-size: 0.9em;
-}
-
-.date {
-  display: block;
-  font-size: 0.85em;
-  color: $gray-medium;
 }
 
 .video {
@@ -445,8 +454,11 @@ ul.iconized {
 }
 
 .reference {
+  margin-bottom: 1em;
+
   .title {
-    font-weight: 700;
+    color: $gray-light;
+    font-weight: 500;
     margin-bottom: 0.25rem;
   }
 
@@ -455,31 +467,24 @@ ul.iconized {
   }
 
   .authors li:after {
-    content: ', ';
+    content: ", ";
   }
 
   .authors li:nth-last-child(2):after {
-    content: ', and ';
+    content: ", and ";
   }
 
   .authors li:last-child:after {
-    content: '';
-  }
-
-  .badges {
-    margin-top: 0.125rem;
-
-    li {
-      padding: 0 0.25em;
-      font-size: 0.85em;
-      text-transform: uppercase;
-      border-radius: 0.125rem;
-    }
+    content: "";
   }
 
   .preprint {
-    color: $gray-dark;
-    background: $gray-lighter;
+    padding: 0.25em 0.3em;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: $gray-medium;
+    background: $gray-darker;
+    border-radius: 0.125rem;
   }
 
   .secondary-information {
@@ -491,105 +496,8 @@ ul.iconized {
   }
 }
 
-.btn {
-  display: block;
-  padding: 0.25em 0.75em;
-  border: 0;
-  border-radius: 0.25em;
-  color: $white;
-  background: $primary;
-  box-shadow: none;
-
-  &:hover {
-    color: $white;
-    background: saturate($primary, 30%);
-    box-shadow: none;
-  }
-
-  &:active,
-  &:focus {
-    color: $white;
-    border-radius: 0.25em;
-    background: darken($primary, 10%);
-    box-shadow: none;
-  }
-}
-
-.btn-primary {
-  background: $secondary;
-
-  &:hover {
-    background: saturate($secondary, 30%);
-  }
-
-  &:active,
-  &:focus {
-    color: $white;
-    border-radius: 0.25em;
-    background: darken($secondary, 10%);
-  }
-}
-
-.btn-big {
-  font-size: 1.25em;
-  font-weight: bold;
-}
-
-.ribbon-wrapper {
-  width: 8.5em;
-  height: 8.5em;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 10;
-}
-
-.ribbon {
-  font-weight: bold;
-  color: $black;
-  text-align: center;
-  -webkit-transform: rotate(45deg);
-  -moz-transform:    rotate(45deg);
-  -ms-transform:     rotate(45deg);
-  -o-transform:      rotate(45deg);
-  position: relative;
-  padding: 0.375em 1em;
-  left: -1em;
-  top: 2.5em;
-  width: 10em;
-  background-color: transparentize($secondary, 0.05);
-  color: $white;
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
-
-  a {
-    box-shadow: none;
-
-    &:hover,
-    &:active,
-    &:focus {
-      color: $white;
-      box-shadow: inset 0 -1px 0 0 $white;
-    }
-  }
-}
-
 .journal {
   font-style: italic;
-}
-
-.columns {
-  position: relative;
-  overflow: auto;
-
-  > * {
-    margin-top: 0;
-  }
-}
-
-.column-1-2 {
-  float: left;
-  width: 100%;
 }
 
 /*
@@ -598,23 +506,43 @@ ul.iconized {
  * -----------------------------------------------------------------------------
  */
 
-#fig-teaser {
-  @include ratio(2520, 1324);
-  background: url(images/test.png) no-repeat center center;
-  background-size: cover;
-}
+#authors-list {
+  h4 + p {
+    margin: -0.25rem 0 0.25rem;
+  }
 
-#authors-list h4 + p {
-  margin-top: -0.25rem;
+  .presenter {
+    position: relative;
+    margin: 1rem -0.5rem -0.5rem -0.5rem;
+    padding: 0.5rem;
+    background: $gray-darkest;
+    border-radius: 0.125rem;
+
+    &:after {
+      position: absolute;
+      display: block;
+      top: 50%;
+      right: 0.25rem;
+      margin-top: -0.8em;
+      content: "Presenter";
+      color: $gray-dark;
+      font-size: 0.8em;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    h4 {
+      margin-top: 0;
+    }
+  }
 }
 
 #footer {
   margin-top: 1rem;
-  padding: 2rem 0 0 0;
+  padding: 2rem 0;
   font-size: 0.85em;
-  color: $gray-medium;
-  border-top: 2px solid $gray-lightest;
-  background: $white;
+  color: $gray-dark;
+  background: $gray-darkest;
 
   a {
     box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.125);
@@ -625,7 +553,7 @@ ul.iconized {
   }
 
   .vcg-name {
-    font-family: 'Open Sans Condensed';
+    font-family: "Open Sans Condensed";
     text-align: right;
     line-height: 1.125em;
   }
@@ -638,7 +566,7 @@ ul.iconized {
   }
 
   .logo-hms {
-    width: 5.75em;  /* 4 (w) : 1 (h) */
+    width: 5.75em; /* 4 (w) : 1 (h) */
     height: 5em;
   }
 
@@ -652,17 +580,42 @@ ul.iconized {
     height: 4.25em;
   }
 
-  .copyright {
-    font-size: 0.9em;
-  }
-
   #more-at-lekschas-de {
-    margin-top: 1rem;
+    margin-top: 2rem;
     padding: 0.75rem 0;
-    background: $black;
+    background: $gray-darkest;
 
     a {
-      color: $primary;
+      color: $gray-dark;
+      box-shadow: inset 0 -1px 0 0 rgba(255, 79, 34, 0);
+
+      &:hover {
+        color: $primary;
+        box-shadow: inset 0 -1px 0 0 rgba(255, 79, 34, 1);
+      }
+    }
+  }
+}
+
+#tools li.iconized {
+  margin-bottom: 1rem;
+
+  .icon {
+    font-size: 1.25em;
+    margin-right: 0.5rem;
+  }
+
+  h4 {
+    margin-top: 0;
+    color: $gray-light;
+
+    span {
+      font-weight: 400;
+
+      &:before {
+        content: ":";
+        margin-right: 0.5em;
+      }
     }
   }
 }
@@ -681,12 +634,6 @@ ul.iconized {
 @media screen and (min-width: 25em) {
   h1 {
     font-size: 4rem;
-    line-height: 1.5;
-
-    .logo {
-      width: 3rem;
-      height: 6rem;
-    }
   }
 
   h1 + h2 {
@@ -698,11 +645,6 @@ ul.iconized {
 @media screen and (min-width: 35.5em) {
   h1 {
     font-size: 6rem;
-
-    .logo {
-      width: 4.5rem;
-      height: 9rem;
-    }
   }
 
   h1 + h2 {
@@ -714,12 +656,6 @@ ul.iconized {
 @media screen and (min-width: 40em) {
   h1 {
     font-size: 7rem;
-
-    .logo {
-      width: 5rem;
-      height: 10.5rem;
-      padding-right: 1rem;
-    }
   }
 
   h1 + h2 {
@@ -727,7 +663,7 @@ ul.iconized {
   }
 
   .content {
-    margin-left: 8.3334%;  /* 1/12 */
+    margin-left: 8.3334%; /* 1/12 */
     margin-right: 8.3334%;
   }
 
@@ -739,21 +675,15 @@ ul.iconized {
 /* 960px */
 @media screen and (min-width: 60em) {
   h1 {
-    font-size: 9rem;
-
-    .logo {
-      width: 6rem;
-      height: 13.5rem;
-      margin-left: -7rem;
-    }
+    font-size: 4.5rem;
   }
 
   h1 + h2 {
-    font-size: 4rem;
+    font-size: 2rem;
   }
 
   .content {
-    margin-left: 11.1112%;  /* 1/9 */
+    margin-left: 11.1112%; /* 1/9 */
     margin-right: 11.1112%;
   }
 
@@ -776,17 +706,13 @@ ul.iconized {
 
 /* 1280px */
 @media screen and (min-width: 80em) {
-  body {
-    font-size: 18px;
-  }
-
   .content {
-    margin-left: 16.6667%;  /* 1/6 */
+    margin-left: 16.6667%; /* 1/6 */
     margin-right: 16.6667%;
   }
 
   .fullscreen {
-    margin-left: -25%;  /* 1/6 */
+    margin-left: -25%; /* 1/6 */
     margin-right: -25%;
   }
 
@@ -810,7 +736,7 @@ ul.iconized {
   }
 
   .content {
-    margin-left: 20%;  /* 1/5 */
+    margin-left: 20%; /* 1/5 */
     margin-right: 20%;
   }
 }

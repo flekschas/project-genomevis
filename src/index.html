@@ -3,65 +3,51 @@
 <head>
   <meta charset="utf-8">
   <meta name="author" content="Fritz Lekschas">
-  <meta name="description" content="Description">
-  <meta name="keywords" content="Key words, key words, ...">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Visually Exploring the Genome At Scale - Information+ 2018 Talk">
+  <meta name="keywords" content="Visualization, Visual Exploration, Guided Navigation, Pattern Exploration, Multiscale Visualizations, Insets, Genomics, Genome Interaction Matrices, Hi-C, 3D Genome">
 
-  <title>Template</title>
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="Visually Exploring the Genome At Scale">
+  <meta itemprop="description" content="Information+ 2018 Conference Talk">
+  <meta itemprop="image" content="http://infoplus.lekschas.de/images/teaser.jpg">
 
-  <link rel="apple-touch-icon" href="images/touchicon.png">
-  <link rel="icon" href="images/favicon.png">
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@flekschas">
+  <meta name="twitter:title" content="Visually Exploring the Genome At Scale">
+  <meta name="twitter:description" content="Information+ 2018 Conference Talk">
+  <meta name="twitter:creator" content="@flekschas">
+  <meta name="twitter:image:src" content="http://infoplus.lekschas.de/images/teaser.jpg">
 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,600" rel="stylesheet">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Visually Exploring the Genome At Scale" />
+  <meta property="og:description" content="Information+ 2018 Conference Talk" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://infoplus.lekschas.de" />
+  <meta property="og:image" content="http://infoplus.lekschas.de/images/teaser.jpg" />
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-<ID>"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <title>Visually Exploring the Genome At Scale (Information+ 2018 Talk)</title>
 
-    gtag('config', 'UA-<ID>');
-  </script>
+  <link rel="icon" href="images/favicon.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
 </head>
 
 <body>
   <div class="content-wrapper">
     <div class="content p-t-2 p-b-2">
       <!-------------------------------- TEASER ------------------------------->
-      <h1>
-        <svg class="logo">
-          <use
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="images/icons.svg#refinery"></use>
-        </svg>
-        Title
-      </h1>
-      <h2>Subtitle</h2>
-      <figure id="fig-teaser"></figure>
-      <p class="abstract larger m-b-2">Main description</p>
+      <h1>Visually Exploring the Genome At Scale</h1>
+      <h2>INFO+ 2018 Talk: Supplementary Information</h2>
+      <article class="abstract larger m-b-2">
+        <p>
+          The human genome is about 2 meters long and tightly folded into the cell nucleus, a sphere that is 4 million times smaller than a pinhead. How do cells avoid entangling the DNA and ensure accessibility of necessary parts? Biologists study DNA folding through the detection of pairwise physical interactions along the DNA, which results in a 3-by-3 million pixel matrix. Visualized as a heatmap, thousands of local visual patterns become apparent. Studying these patterns is like trying to understand the average layout of parks while viewing countries on a world map. Biologists need to inspect these patterns for sensemaking of biological features. We have developed 3 interactive tools to explore such large datasets at different steps: (1) seamless browsing using <a href="http://higlass.io" target="_bank">HiGlass</a>, (2) local pattern exploration through decomposition in <a href="http://hipiler.lekschas.de" target="_blank">HiPiler</a>, and (3) guided navigation with <a href="http://scalable-insets.lekschas.de" target="_bank">Scalable Insets</a>. I will present our tools and discuss the generalizability of the underlying concepts.
+        </p>
+      </article>
 
-      <!--------------------------------- NEWS -------------------------------->
-      <h3 id="news" class="iconized underlined anchored">
-        <a href="#news" class="hidden-anchor">
-          <svg class="icon">
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="images/icons.svg#link"></use>
-          </svg>
-        </a>
-        <svg class="icon icon-new">
-          <use
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="images/icons.svg#new"></use>
-        </svg>
-        <span>News</span>
-      </h3>
-      <p class="abstract">Some news</p>
-
-      <!------------------------------ SCREENCAST ----------------------------->
-      <h3 id="screencast" class="iconized underlined anchored">
-        <a href="#screencast" class="hidden-anchor">
+      <!----------------------------- SOURCE CODE ----------------------------->
+      <h3 id="tools" class="iconized underlined anchored">
+        <a href="#tools" class="hidden-anchor">
           <svg class="icon">
             <use
               xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -71,66 +57,119 @@
         <svg class="icon">
           <use
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="images/icons.svg#video"></use>
+            xlink:href="images/icons.svg#code"></use>
         </svg>
-        <span>Screencast</span>
+        Tools
       </h3>
-      <div id="youtube" class="video">
-        <iframe
-          src="https://www.youtube.com/embed/WpbBoW2f4iM?rel=0&amp;showinfo=0"
-          frameborder="0"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <!-------------------------------- INTRO -------------------------------->
-      <h3 id="introduction" class="iconized underlined anchored">
-        <a href="#introduction" class="hidden-anchor">
+      <p></p>
+      <ul id="tools" class="no-list-style large-spacing iconized smaller">
+        <li class="iconized">
           <svg class="icon">
             <use
               xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="images/icons.svg#link"></use>
+              xlink:href="images/icons.svg#higlass"></use>
           </svg>
-        </a>
-        <svg class="icon icon-small">
-          <use
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="images/icons.svg#text"></use>
-        </svg>
-        <span>Introduction</span>
-      </h3>
-
-      <section class="text">
-        <figure id="fig-user-roles">
-          <figcaption>Fig. 1: Exploration behavior of different user roles.</figcaption>
-        </figure>
-
-        <p class="abstract first">
-          <strong>Why?</strong>  Biomedical repositories are growing rapidly and provide scientists with tremendous opportunities to re-use data. In order to exploit published data sets efficiently, it is crucial to understand the content of repositories and to discover data relevant to a question of interest. These are challenging tasks, as most repositories currently only support finding data sets through text-based search of metadata and in some cases also through metadata-based browsing. To address this, we conducted a task analysis through semi-structured interviews with 8 PhD-level domain experts and identified 3 distinct user roles (<a href="#fig-user-roles">Fig. 1</a>).
-        </p>
-
-        <figure id="fig-overview">
-          <figcaption>Fig. 2: <abbr title="Semantic Annotation Tool and Ontological Relations Interface">SATORI</abbr>'s system and data model.</figcaption>
-        </figure>
-
-        <p class="abstract"><strong>What?</strong>  Biological data sets consists of experimental data and metadata describing the studies, properties of the analyzed biological samples, and attributes of individual data files. In this context, a data set is a collection of data files, along with the metadata  (<a href="#fig-overview">Fig. 2</a>). Additionally, metadata is partially annotated with ontology terms. An ontology describes a certain domain (e.g. <em>human anatomy</em>), defines controlled vocabularies for its concepts and relationships (e.g., <em>kidney</em> and <em>is-part-of</em>) and relates concepts with each other (e.g., <em>nephron is-part-of kidney</em>). By means of ontology terms, sets of annotated data sets can be classified hierarchically. <abbr title="Semantic Annotation Tool and Ontological Relations Interface">SATORI</abbr> extracts free-text and ontologically annotated metadata  (<a href="#fig-overview">Fig. 2</a>). The free-text metadata is indexed in a text-based search system. Additionally, data set-related ontology classes are parsed and visualized to provide semantic context to data sets. Since <abbr title="Semantic Annotation Tool and Ontological Relations Interface">SATORI</abbr>'s goal is to support exploration rather than to visualize ontologies themselves, only a relevant subtree of the ontologies is shown, i.e., effectively enforcing a strict containment hierarchy (<a href="#fig-ontology">Fig. 3</a>).</p>
-
-        <div class="flex-c m-t-2 m-b-2">
-          <figure id="fig-ontology" class="flex-g-1">
-            <figcaption>Fig. 3: Ontology pruning.</figcaption>
-          </figure>
-
-          <figure id="fig-precision-recall" class="flex-g-1">
-            <figcaption>Fig. 4: Precision and recall.</figcaption>
-          </figure>
-        </div>
-
-        <figure id="fig-link-indication">
-          <figcaption>Fig. 5: Link location.</figcaption>
-        </figure>
-
-        <p class="abstract"><strong>How?</strong>  <abbr title="Semantic Annotation Tool and Ontological Relations Interface">SATORI</abbr> is composed of two main interlinked views: the data set view and the exploration view. In the treemap an ontology term is illustrated by a rectangle. The area of the rectangle visualizes the size of the term relative to its sibling terms and the color indicates the distance to the farthest child term. The farther away this child term is, the darker is the color. The node-link diagram represents ontology terms as nodes and links shown parent and child terms (<a href="#fig-link-indication">Fig. 5</a>). Additionally, the diagram visualizes the precision and recall (<a href="#fig-precision-recall">Fig. 4</a>) for each term given the currently retrieved data sets. In this context, precision is useful to understand how frequently a term is used for annotation in the retrieved set of data sets and recall provides a notion of information scent by indicating if there are more data sets annotated with this term. Finally, the exploration view acts as a semantic query interface and lets users filter down collections of data sets via ontology term-based Boolean queries.</p>
-      </section>
+          <div>
+            <h4>
+              <a href="http://higlass.io" target="_blank">HiGlass</a><span>Fast Contact Map Visualization</span>
+            </h4>
+            <ul class="no-list-style inline-list iconized remix-links">
+              <li>
+                <svg class="icon">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="images/icons.svg#globe"></use>
+                </svg>
+                <a href="http://higlass.io/about" target="_blank">Info</a>
+              </li>
+              <li>
+                <svg class="icon">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="images/icons.svg#github"></use>
+                </svg>
+                <a href="https://github.com/hms-dbmi/higlass" target="_blank">Code</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="iconized">
+          <svg class="icon">
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="images/icons.svg#hipiler"></use>
+          </svg>
+          <div>
+            <h4>
+              <a href="http://hipiler.higlass.io" target="_blank">HiPiler</a><span>Pattern Exploration with Small Multiples</span>
+            </h4>
+            <ul class="no-list-style inline-list iconized remix-links">
+              <li>
+                <svg class="icon">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="images/icons.svg#globe"></use>
+                </svg>
+                <a href="http://hipiler.lekschas.de" target="_blank">Info</a>
+              </li>
+              <li>
+                <svg class="icon">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="images/icons.svg#github"></use>
+                </svg>
+                <a href="https://github.com/hms-dbmi/higlass" target="_blank">Code</a>
+              </li>
+              <li>
+                <svg class="icon">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="images/icons.svg#video"></use>
+                </svg>
+                <a href="https://www.youtube.com/watch?v=qoLqje5OYKg" target="_blank">Video</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="iconized">
+          <svg class="icon">
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="images/icons.svg#scalable-insets"></use>
+          </svg>
+          <div>
+            <h4>
+              <a href="http://scalable-insets.lekschas.de" target="_blank">Scalable Insets</a><span>Pattern-Driven Guidance in Contact Maps</span>
+            </h4>
+            <ul class="no-list-style inline-list iconized remix-links">
+              <li>
+                <svg class="icon">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="images/icons.svg#globe"></use>
+                </svg>
+                <a href="http://scalable-insets.lekschas.de" target="_blank">Info</a>
+              </li>
+              <li>
+                <svg class="icon">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="images/icons.svg#github"></use>
+                </svg>
+                <a href="https://github.com/flekschas/higlass-scalable-insets" target="_blank">Code</a>
+              </li>
+              <li>
+                <svg class="icon">
+                  <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="images/icons.svg#video"></use>
+                </svg>
+                <a href="https://www.youtube.com/watch?v=7Bn4mNLl3WQ" target="_blank">Video</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
 
       <!----------------------------- PUBLICATION ----------------------------->
       <h3 id="publications" class="iconized underlined anchored">
@@ -146,50 +185,68 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xlink:href="images/icons.svg#document"></use>
         </svg>
-        Publication
+        Publications
       </h3>
       <ol id="publications" class="no-list-style">
         <li class="reference">
-          <p class="title"><a href="https://doi.org/10.1093/bioinformatics/btx739" target="_blank">SATORI: A System for Ontology-Guided Visual Exploration of Biomedical Data Repositories</a></p>
+          <p class="title"><a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1486-1" target="_blank">HiGlass: web-based visual exploration and analysis of genome interaction maps</a></p>
+          <div class="secondary-information">
+            <ol class="no-list-style inline-list authors">
+              <li>Peter Kerpedjiev</li>
+              <li>Nezar Abdennur</li>
+              <li>Fritz Lekschas</li>
+              <li>Chuck McCallum</li>
+              <li>Kasper Dinkla</li>
+              <li>Hendrik Strobelt</li>
+              <li>Jacob M. Luber</li>
+              <li>Scott B. Ouellette</li>
+              <li>Alaleh Azhir</li>
+              <li>Nikhil Kumar</li>
+              <li>Jeewon Hwang</li>
+              <li>Soohyun Lee</li>
+              <li>Burak H. Alver</li>
+              <li>Hanspeter Pfister</li>
+              <li>Leonid A. Mirny</li>
+              <li>Peter J. Park</li>
+              <li>Nils Gehlenborg</li>
+            </ol>
+            <span class="journal">Genome Biology</span>, 2018, 19:125.
+            <span class="doi"><abbr title="Digital Object Identifier">doi</abbr>: <a href="https://doi.org/10.1186/s13059-018-1486-1" target="_blank">10.1186/s13059-018-1486-1</a></span>
+          </div>
+        </li>
+        <li class="reference">
+          <p class="title"><a href="https://ieeexplore.ieee.org/document/8017587" target="_blank">HiPiler: Visual Exploration Of Large Genome Interaction Matrices With Interactive Small Multiples</a></p>
           <div class="secondary-information">
             <ol class="no-list-style inline-list authors">
               <li>Fritz Lekschas</li>
+              <li>Benjamin Bach</li>
+              <li>Peter Kerpedjiev</li>
               <li>Nils Gehlenborg</li>
+              <li>Hanspeter Pfister</li>
             </ol>
-            <span class="journal">Bioinformatics</span>, Volume 34, Issue 7, 1 April 2018, Pages 1200–1207.
-            <span class="doi"><abbr title="Digital Object Identifier">doi</abbr>: <a href="https://doi.org/10.1093/bioinformatics/btx739" target="_blank">10.1093/bioinformatics/btx739</a></span>
+            <span class="journal">IEEE Transactions on Visualization and Computer Graphics</span> (InfoVis), 24, 1, 522-531, 2018.</span>
+            <span class="doi"><abbr title="Digital Object Identifier">doi</abbr>: <a href="https://doi.org/10.1109/TVCG.2017.2745978" target="_blank">10.1109/TVCG.2017.2745978</a></span>
+          </div>
+        </li>
+        <li class="reference">
+          <p class="title"><a href="https://www.biorxiv.org/content/early/2018/04/15/301036" target="_blank">Pattern-Driven Navigation in 2D Multiscale Visual Spaces with Scalable Insets</a></p>
+          <div class="secondary-information">
+            <ol class="no-list-style inline-list authors">
+              <li>Fritz Lekschas</li>
+              <li>Michael Behrisch</li>
+              <li>Benjamin Bach</li>
+              <li>Peter Kerpedjiev</li>
+              <li>Nils Gehlenborg</li>
+              <li>Hanspeter Pfister</li>
+            </ol>
+            <span class="journal">bioRxiv</span>, April 15, 2018.
+            <span class="doi"><abbr title="Digital Object Identifier">doi</abbr>: <a href="https://doi.org/10.1101/301036" target="_blank">10.1101/301036</a></span>
+            <span class="preprint">Preprint</span>
           </div>
         </li>
       </ol>
 
-      <!----------------------------- SOURCE CODE ----------------------------->
-      <h3 id="source-code" class="iconized underlined anchored">
-        <a href="#source-code" class="hidden-anchor">
-          <svg class="icon">
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="images/icons.svg#link"></use>
-          </svg>
-        </a>
-        <svg class="icon">
-          <use
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="images/icons.svg#code"></use>
-        </svg>
-        Source Code
-      </h3>
-      <p>All the code of HiPiler are publicly accessible and open-source.</p>
-      <ul class="no-list-style large-spacing iconized smaller">
-        <li class="iconized">
-          <svg class="icon">
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="images/icons.svg#github"></use>
-          </svg><a href="https://github.com/flekschas/hipiler" target="_blank">https://github.com/flekschas/hipiler</a>
-        </li>
-      </ul>
-
-      <!------------------------------- AUTHORS ------------------------------->
+      <!----------------------------- CO-AUTHORS ------------------------------>
       <h3 id="authors" class="iconized underlined anchored">
         <a href="#authors" class="hidden-anchor">
           <svg class="icon">
@@ -206,10 +263,12 @@
         Authors
       </h3>
       <ol id="authors-list" class="no-list-style">
-        <li>
-          <h4 class="blue">Fritz Lekschas</h4>
-          <p class="smaller">Harvard John A. Paulson School of Engineering and Applied Sciences</p>
+        <li class="presenter">
+          <h4>Fritz Lekschas</h4>
           <ul class="no-list-style inline-list iconized remix-links">
+            <li>
+              <span>Harvard University</span>
+            </li>
             <li>
               <svg class="icon">
                 <use
@@ -237,9 +296,107 @@
           </ul>
         </li>
         <li>
-          <h4 class="blue">Nils Gehlenborg</h4>
-          <p class="smaller">Department of Biomedical Informatics, Harvard Medical School</p>
+          <h4>Benjamin Bach</h4>
           <ul class="no-list-style inline-list iconized remix-links">
+            <li>
+              <span>University of Edinburgh</span>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#globe"></use>
+              </svg>
+              <a href="http://benjbach.me" target="_blank">http://benjbach.me</a>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#twitter"></use>
+              </svg>
+              <a href="https://twitter.com/benjbach" target="_blank">benjbach</a>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#github"></use>
+              </svg>
+              <a href="https://github.com/benjbach" target="_blank">benjbach</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>Peter Kerpedjiev</h4>
+          <ul class="no-list-style inline-list iconized remix-links">
+            <li>
+              <span>Harvard Medical School</span>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#globe"></use>
+              </svg>
+              <a href="http://emptypipes.org/" target="_blank">http://emptypipes.org</a>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#twitter"></use>
+              </svg>
+              <a href="https://twitter.com/pkerpedjiev" target="_blank">pkerpedjiev</a>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#github"></use>
+              </svg>
+              <a href="https://github.com/pkerpedjiev" target="_blank">pkerpedjiev</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>Michael Behrisch</h4>
+          <ul class="no-list-style inline-list iconized remix-links">
+            <li>
+              <span>Harvard University</span>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#globe"></use>
+              </svg>
+              <a href="https://mbehrisch.github.io" target="_blank">https://mbehrisch.github.io</a>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#twitter"></use>
+              </svg>
+              <a href="https://twitter.com/michaelbehrisch" target="_blank">michaelbehrisch</a>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#github"></use>
+              </svg>
+              <a href="https://github.com/mbehrisch" target="_blank">mbehrisch</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>Nils Gehlenborg</h4>
+          <ul class="no-list-style inline-list iconized remix-links">
+            <li>
+              <span>Harvard Medical School</span>
+            </li>
             <li>
               <svg class="icon">
                 <use
@@ -266,28 +423,37 @@
             </li>
           </ul>
         </li>
-      </ol>
-
-      <!------------------------------ REFERENCES ----------------------------->
-      <h3 id="references" class="iconized underlined anchored">
-        <a href="#references" class="hidden-anchor">
-          <svg class="icon">
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="images/icons.svg#link"></use>
-          </svg>
-        </a>
-        <svg class="icon">
-          <use
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="images/icons.svg#bookmark"></use>
-        </svg>
-        References
-      </h3>
-      <ol class="no-list-style large-spacing iconized">
-        <li id="ref-1" class="flex-c reference">
-          <span class="number">[1]</span>
-          <span class="flex-g-1">Fraser and Bickmore. (2017) Nuclear organization of the genome and the potential for gene regulation. <em>Nature</em>, 447, 7143, 413–417.</span>
+        <li>
+          <h4>Hanspeter Pfister</h4>
+          <ul class="no-list-style inline-list iconized remix-links">
+            <li>
+              <span>Harvard University</span>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#globe"></use>
+              </svg>
+              <a href="https://vcg.seas.harvard.edu" target="_blank">https://vcg.seas.harvard.edu</a>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#twitter"></use>
+              </svg>
+              <a href="https://twitter.com/hpfister" target="_blank">hpfister</a>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#github"></use>
+              </svg>
+              <a href="https://github.com/hpfister" target="_blank">hpfister</a>
+            </li>
+          </ul>
         </li>
       </ol>
     </div>
@@ -316,12 +482,6 @@
               xlink:href="images/icons.svg#harvard-hms"></use>
           </svg>
         </div>
-        <p class="centered m-t-1 copyright">
-        Copyright &copy; 2017 the President and Fellows of Harvard College. All content on this website is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">Creative Commons Attribution license (CC BY)</a>. Copyright of the linked papers is with the publishers.
-        </p>
-      </div>
-      <div id="more-at-lekschas-de" class="flex-c flex-jc-c">
-        <a href="https://lekschas.de/research">More Projects by Fritz Lekschas</a>
       </div>
     </footer>
   </div>

@@ -1,17 +1,15 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "node": true
   },
   "extends": [
     "eslint:recommended",
-    "airbnb/base",
+    "prettier",
   ],
-  "parser": "babel-eslint",
   "parserOptions": {
-    "ecmaFeatures": {},
-    "ecmaVersion": 6
+    "ecmaVersion": 2018,
+    "sourceType": "module",
   },
-  "plugins": [],
-  "rules": {}
 }
