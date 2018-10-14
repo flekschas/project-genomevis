@@ -241,16 +241,16 @@ strong {
   font-weight: 500;
 }
 ::-webkit-selection {
+  background-color: rgba(255, 79, 34, 0.5);
   color: #fff;
-  background: #9d3e24;
 }
 ::-moz-selection {
+  background-color: rgba(255, 79, 34, 0.5);
   color: #fff;
-  background: #9d3e24;
 }
 ::selection {
+  background-color: rgba(255, 79, 34, 0.5);
   color: #fff;
-  background: #9d3e24;
 }
 figure > img {
   max-width: 100%;
@@ -568,7 +568,7 @@ ul.iconized li .icon {
 }
 #footer {
   margin-top: 1rem;
-  padding: 2rem 0;
+  padding: 2rem 0 0;
   font-size: 0.85em;
   color: #666;
   background: #1a1a1a;
@@ -604,10 +604,10 @@ ul.iconized li .icon {
 #footer #more-at-lekschas-de {
   margin-top: 2rem;
   padding: 0.75rem 0;
-  background: #1a1a1a;
+  background: #401409;
 }
 #footer #more-at-lekschas-de a {
-  color: #666;
+  color: #ff4f22;
   -webkit-box-shadow: inset 0 -1px 0 0 rgba(255, 79, 34, 0);
   box-shadow: inset 0 -1px 0 0 rgba(255, 79, 34, 0);
 }
