@@ -500,6 +500,33 @@ ul.iconized {
   font-style: italic;
 }
 
+.slides-container {
+  @include ratio(10, 7);
+
+  width: 50%;
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+  background: $black;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0.25rem;
+  }
+}
+
 /*
  * -----------------------------------------------------------------------------
  * Specific styles, i.e. IDs
@@ -620,8 +647,8 @@ ul.iconized {
   }
 }
 
-#youtube {
-  @include ratio(3360, 2100);
+#video {
+  background: $gray-darkest;
 }
 
 /*
