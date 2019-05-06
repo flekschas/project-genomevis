@@ -18,7 +18,7 @@ body {
 }
 
 body {
-  color: $gray-medium;
+  color: $white;
   font-family: "Rubik", sans-serif;
   font-size: 16px;
   font-fammily: sans-serif;
@@ -42,14 +42,7 @@ h6 {
 h1,
 h2,
 h3 {
-  color: $white;
   margin: 4rem 0 0.5rem 0;
-}
-
-h4,
-h5,
-h6 {
-  color: $gray-light;
 }
 
 h1,
@@ -78,7 +71,6 @@ h2 {
 }
 
 h1 + h2 {
-  color: $white;
   margin-top: 1rem;
   margin-bottom: 2rem;
   line-height: 1.2;
@@ -192,10 +184,6 @@ section.text {
  * -----------------------------------------------------------------------------
  */
 
-.darker {
-  color: $gray-darker;
-}
-
 .content-wrapper {
   position: relative;
   box-shadow: 0 -1px 2rem 0 rgba(0, 0, 0, 0.1), 0 -1px 6px 0 rgba(0, 0, 0, 0.1),
@@ -217,7 +205,6 @@ svg.centered {
 }
 
 .abstract {
-  color: $gray-light;
   column-count: 1;
   text-align: justify;
   line-height: 1.5em;
@@ -302,22 +289,22 @@ h3.anchored {
   list-style: none;
 }
 
-ul.medium-spacing li,
-ol.medium-spacing li {
+ul.medium-spacing > li,
+ol.medium-spacing > li {
   margin-top: 0.25em;
   margin-bottom: 0.25em;
 }
 
-ul.large-spacing li,
-ol.large-spacing li {
+ul.large-spacing > li,
+ol.large-spacing > li {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
 
-ul.medium-spacing li,
-ul.large-spacing li,
-ol.medium-spacing li,
-ol.large-spacing li {
+ul.medium-spacing > li,
+ul.large-spacing > li,
+ol.medium-spacing > li,
+ol.large-spacing > li {
   &:first-child {
     margin-top: 0;
   }
@@ -393,18 +380,7 @@ h5.iconized {
 
 ol.iconized,
 ul.iconized {
-  position: relative;
-  overflow: auto;
-
   li {
-    position: relative;
-    overflow: auto;
-
-    > * {
-      display: block;
-      float: left;
-    }
-
     > *:last-child {
       margin-right: 0.5em;
     }
@@ -457,9 +433,9 @@ ul.iconized {
   margin-bottom: 1em;
 
   .title {
-    color: $gray-light;
     font-weight: 500;
     margin-bottom: 0.25rem;
+    text-align: left;
   }
 
   .authors {
@@ -500,30 +476,41 @@ ul.iconized {
   font-style: italic;
 }
 
+.slides-containers {
+  margin: 0 -0.25rem;
+}
+
 .slides-container {
   @include ratio(10, 7);
 
-  width: 50%;
-  margin: 0.5rem;
+  width: 100%;
   border-radius: 0.25rem;
   background: $black;
+  overflow: hidden;
 
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  > * {
+  .slides-inner-container {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 0.25rem;
+    right: 0.25rem;
+    bottom: 0.25rem;
+    left: 0.25rem;
+
+    > * {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0.25rem;
+    }
+  }
+
+  figure img {
     height: 100%;
-    border: 0;
-    border-radius: 0.25rem;
+    width: auto;
   }
 }
 
@@ -537,35 +524,9 @@ span.only-above-sm {
  * -----------------------------------------------------------------------------
  */
 
-#authors-list {
-  h4 + p {
-    margin: -0.25rem 0 0.25rem;
-  }
-
-  .presenter {
-    position: relative;
-    margin: 1rem -0.5rem -0.5rem -0.5rem;
-    padding: 0.5rem;
-    background: $gray-darkest;
-    border-radius: 0.125rem;
-
-    &:after {
-      position: absolute;
-      display: block;
-      top: 50%;
-      right: 0.25rem;
-      margin-top: -0.8em;
-      content: "Presenter";
-      color: $gray-dark;
-      font-size: 0.8em;
-      font-weight: 500;
-      text-transform: uppercase;
-    }
-
-    h4 {
-      margin-top: 0;
-    }
-  }
+#poster {
+  background: #fff;
+  text-align: center;
 }
 
 #footer {
@@ -573,7 +534,7 @@ span.only-above-sm {
   padding: 2rem 0 0 0;
   font-size: 0.85em;
   color: $gray-dark;
-  background: $gray-darkest;
+  border-top: 2px solid $gray-darkest;
 
   a {
     box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.125);
@@ -614,45 +575,117 @@ span.only-above-sm {
   #more-at-lekschas-de {
     margin-top: 2rem;
     padding: 0.75rem 0;
-    background: #401409;
+    color: $gray-medium;
+    background: $gray-darkest;
+    box-shadow: none;
 
-    a {
+    &:hover,
+    &:focus,
+    &:active {
       color: $primary;
-      box-shadow: inset 0 -1px 0 0 rgba(255, 79, 34, 0);
-
-      &:hover {
-        color: $primary;
-        box-shadow: inset 0 -1px 0 0 rgba(255, 79, 34, 1);
-      }
+      background: transparentize($primary, 0.85);
+      box-shadow: none;
     }
   }
 }
 
-#tools li.iconized {
-  margin-bottom: 1rem;
+#tools li {
+  margin-bottom: 0.5rem;
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    > span {
+      font-weight: 400;
+
+      &:before {
+        content: ":";
+      }
+    }
+  }
 
   .icon {
     font-size: 1.25em;
     margin-right: 0.5rem;
   }
 
-  h4 {
-    margin-top: 0;
-    color: $gray-light;
-
-    span {
-      font-weight: 400;
-
-      &:before {
-        content: ":";
-        margin-right: 0.5em;
-      }
-    }
+  .remix-links {
+    margin-left: 1.75rem;
   }
 }
 
 #video {
   background: $gray-darkest;
+  overflow: hidden;
+
+  .play {
+    position: absolute;
+    z-index: 3;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 2.5rem;
+    height: 2rem;
+    background: transparentize($black, 0.5);
+    border-radius: 0.25rem;
+    transition: background $fast $ease;
+
+    div {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0.5rem 0 0.5rem 0.75rem;
+      border-color: transparent transparent transparent $primary;
+      transition: border-color $fast $ease;
+    }
+  }
+
+  .time {
+    position: absolute;
+    z-index: 3;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    width: 2.5rem;
+    padding: 0.25rem 0 0.2rem 0;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 0.9rem;
+    background: transparentize($black, 0.5);
+    border-radius: 0.25rem;
+  }
+
+  .thumbnail,
+  .thumbnail-color {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .thumbnail {
+    position: absolute;
+    z-index: 1;
+    background-image: url("../images/video-thumbnail.jpg");
+  }
+
+  .thumbnail-color {
+    z-index: 2;
+    background-image: url("../images/video-thumbnail-color.jpg");
+    opacity: 0;
+    transition: opacity $fast $ease;
+  }
+
+  &:hover .thumbnail-color {
+    opacity: 1;
+  }
 }
 
 /*
@@ -661,8 +694,46 @@ span.only-above-sm {
  * -----------------------------------------------------------------------------
  */
 
-/* 568px (Pure.css Grid: SM) */
-@media screen and (min-width: 35.5em) {
+/* 480px */
+@media screen and (min-width: 30em) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h1 + h2 {
+    font-size: 1.375rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h3.iconized {
+    height: 2rem;
+  }
+
+  h4 {
+    font-size: 1.125rem;
+  }
+
+  h3.iconized,
+  h4.iconized,
+  h5.iconized {
+    > .icon {
+      width: 1em;
+    }
+  }
+}
+
+/* 560px */
+@media screen and (min-width: 35em) {
+  .slides-container {
+    width: 33.333%;
+  }
+}
+
+/* 640px */
+@media screen and (min-width: 40em) {
   h1 {
     font-size: 3rem;
   }
@@ -672,7 +743,7 @@ span.only-above-sm {
   }
 
   h3 {
-    font-size: 2em;
+    font-size: 2rem;
   }
 
   h3.iconized {
@@ -680,15 +751,12 @@ span.only-above-sm {
   }
 
   h4 {
-    font-size: 1.25em;
+    font-size: 1.25rem;
   }
 
-  h3.iconized,
-  h4.iconized,
-  h5.iconized {
-    > .icon {
-      width: 1em;
-    }
+  .content {
+    margin-left: 8.3334%; /* 1/12 */
+    margin-right: 8.3334%;
   }
 
   .abstract {
@@ -705,14 +773,6 @@ span.only-above-sm {
   }
 }
 
-/* 640px */
-@media screen and (min-width: 40em) {
-  .content {
-    margin-left: 8.3334%; /* 1/12 */
-    margin-right: 8.3334%;
-  }
-}
-
 /* 960px */
 @media screen and (min-width: 60em) {
   h1 {
@@ -724,14 +784,6 @@ span.only-above-sm {
   }
 
   .content {
-    margin-left: 11.1112%; /* 1/9 */
-    margin-right: 11.1112%;
-  }
-}
-
-/* 1280px */
-@media screen and (min-width: 80em) {
-  .content {
     margin-left: 16.6667%; /* 1/6 */
     margin-right: 16.6667%;
   }
@@ -742,10 +794,24 @@ span.only-above-sm {
   }
 }
 
-/* 1600px */
-@media screen and (min-width: 100em) {
+/* 1280px */
+@media screen and (min-width: 80em) {
   .content {
     margin-left: 20%; /* 1/5 */
     margin-right: 20%;
+  }
+
+  .fullscreen {
+    margin-left: -33.334%; /* 1/6 */
+    margin-right: -33.334%;
+  }
+}
+
+/* 1600px */
+@media screen and (min-width: 100em) {
+  .content {
+    max-width: 960px;
+    margin-left: auto; /* 1/5 */
+    margin-right: auto;
   }
 }

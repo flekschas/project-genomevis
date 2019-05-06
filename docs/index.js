@@ -155,7 +155,7 @@
               ? arguments[0]
               : {}
             ).target,
-            g = function() {
+            v = function() {
               var e = Math.min,
                 t = {
                   width: window.innerWidth,
@@ -194,16 +194,16 @@
                 s = l.getBoundingClientRect(),
                 f = s.top,
                 p = s.left,
-                g = s.width,
-                v = s.height,
-                h = e(e(c, o) / g, e(u, n) / v),
+                v = s.width,
+                g = s.height,
+                h = e(e(c, o) / v, e(u, n) / g),
                 z =
                   "scale(" +
                   h +
                   ") translate3d(" +
-                  ((o - g) / 2 - p + b.margin + t.left) / h +
+                  ((o - v) / 2 - p + b.margin + t.left) / h +
                   "px, " +
-                  ((n - v) / 2 - f + b.margin + t.top) / h +
+                  ((n - g) / 2 - f + b.margin + t.top) / h +
                   "px, 0)";
               (E.zoomed.style.transform = z),
                 E.zoomedHd && (E.zoomedHd.style.transform = z);
@@ -271,7 +271,7 @@
                 }),
                 E.original.classList.add("medium-zoom-image--hidden"),
                 E.zoomed.classList.add("medium-zoom-image--opened"),
-                E.zoomed.addEventListener("click", v),
+                E.zoomed.addEventListener("click", g),
                 E.zoomed.addEventListener("transitionend", function e() {
                   (z = !1),
                     E.zoomed.removeEventListener("transitionend", e),
@@ -293,15 +293,15 @@
                           E.zoomedHd.src
                       ),
                       (E.zoomedHd = null),
-                      g();
+                      v();
                   });
                 var s = setInterval(function() {
                   E.zoomedHd.complete &&
                     (clearInterval(s),
                     E.zoomedHd.classList.add("medium-zoom-image--opened"),
-                    E.zoomedHd.addEventListener("click", v),
+                    E.zoomedHd.addEventListener("click", g),
                     document.body.appendChild(E.zoomedHd),
-                    g());
+                    v());
                 }, 10);
               } else if (E.original.hasAttribute("srcset")) {
                 (E.zoomedHd = E.zoomed.cloneNode()),
@@ -309,15 +309,15 @@
                 var f = E.zoomedHd.addEventListener("load", function() {
                   E.zoomedHd.removeEventListener("load", f),
                     E.zoomedHd.classList.add("medium-zoom-image--opened"),
-                    E.zoomedHd.addEventListener("click", v),
+                    E.zoomedHd.addEventListener("click", g),
                     document.body.appendChild(E.zoomedHd),
-                    g();
+                    v();
                 });
-              } else g();
+              } else v();
             }
           });
         },
-        v = function() {
+        g = function() {
           return new c(function(t) {
             !z && E.original
               ? ((z = !0),
@@ -356,7 +356,7 @@
             ? arguments[0]
             : {}
           ).target;
-          return E.original ? v() : i({ target: e });
+          return E.original ? g() : i({ target: e });
         },
         h = [],
         d = [],
@@ -388,11 +388,11 @@
       document.addEventListener("click", function(e) {
         var t = e.target;
         return t === w
-          ? void v()
+          ? void g()
           : void (-1 === h.indexOf(t) || r({ target: t }));
       }),
         document.addEventListener("keyup", function(e) {
-          27 === (e.keyCode || e.which) && v();
+          27 === (e.keyCode || e.which) && g();
         }),
         document.addEventListener("scroll", function() {
           if (!z && E.original) {
@@ -401,13 +401,13 @@
               document.documentElement.scrollTop ||
               document.body.scrollTop ||
               0;
-            Math.abs(y - e) > b.scrollOffset && setTimeout(v, 150);
+            Math.abs(y - e) > b.scrollOffset && setTimeout(g, 150);
           }
         }),
-        window.addEventListener("resize", v);
+        window.addEventListener("resize", g);
       var L = {
         open: i,
-        close: v,
+        close: g,
         toggle: r,
         update: function() {
           var e =
@@ -444,7 +444,7 @@
         detach: function() {
           for (var e = arguments.length, t = Array(e), o = 0; o < e; o++)
             t[o] = arguments[o];
-          E.zoomed && v();
+          E.zoomed && g();
           var n =
             0 < t.length
               ? t.reduce(function(e, t) {
@@ -504,6 +504,12 @@
       return L;
     };
     o(0);
-    i(".zoomable", { margin: 48 });
+    i(".zoomable", { margin: 24 });
+    var r = document.getElementById("video"),
+      d = document.getElementById("video-preview"),
+      a = document.getElementById("video-iframe");
+    r.addEventListener("click", function(e) {
+      e.preventDefault(), (d.style.display = "none"), (a.src += "&autoplay=1");
+    });
   }
 ]);

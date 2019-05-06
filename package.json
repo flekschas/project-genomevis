@@ -1,5 +1,5 @@
 {
-  "name": "project-page-infoplus-2018",
+  "name": "project-page-genomevis",
   "version": "0.1.0",
   "description": "Project page for the INFO+ 2018 conference",
   "private": true,
@@ -18,7 +18,7 @@
     "start": "webpack-dev-server --mode development --open"
   },
   "dependencies": {
-    "medium-zoom": "^1.0.2"
+    "medium-zoom": "^1.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
