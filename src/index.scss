@@ -621,7 +621,6 @@ span.only-above-sm {
 
   .play {
     position: absolute;
-    z-index: 3;
     top: 0.5rem;
     right: 0.5rem;
     width: 2.5rem;
@@ -642,7 +641,6 @@ span.only-above-sm {
 
   .time {
     position: absolute;
-    z-index: 3;
     bottom: 0.5rem;
     right: 0.5rem;
     width: 2.5rem;
@@ -672,12 +670,10 @@ span.only-above-sm {
 
   .thumbnail {
     position: absolute;
-    z-index: 1;
     background-image: url("../images/video-thumbnail.jpg");
   }
 
   .thumbnail-color {
-    z-index: 2;
     background-image: url("../images/video-thumbnail-color.jpg");
     opacity: 0;
     transition: opacity $fast $ease;
