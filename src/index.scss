@@ -610,7 +610,8 @@ span.only-above-sm {
       font-weight: 400;
 
       &:before {
-        content: ": ";
+        content: ":";
+        padding-right: 0.25em;
       }
     }
   }
