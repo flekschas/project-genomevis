@@ -603,7 +603,7 @@ span.only-above-sm {
   font-weight: 400;
 }
 #tools li h4 > span:before {
-  content: ":";
+  content: ": ";
 }
 #tools li .icon {
   font-size: 1.25em;
