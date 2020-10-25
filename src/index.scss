@@ -454,17 +454,27 @@ ul.iconized {
     content: "";
   }
 
-  .preprint {
+  .authors strong {
+    color: $white;
+  }
+
+  .highlight {
     padding: 0.25em 0.3em;
     font-size: 0.8em;
-    text-transform: uppercase;
-    color: $gray-medium;
-    background: $gray-darker;
+    color: $black;
+    background: $gray-medium;
     border-radius: 0.125rem;
+    box-shadow: none;
+  }
+
+  .highlight.award {
+    color: $black;
+    background: $primary;
   }
 
   .secondary-information {
     font-size: 0.9em;
+    color: $gray-light;
   }
 
   .number {
@@ -612,6 +622,7 @@ span.only-above-sm {
 
   .remix-links {
     margin-left: 1.75rem;
+    color: $gray-light;
   }
 }
 
